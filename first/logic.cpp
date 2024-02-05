@@ -26,7 +26,7 @@ string convert_matrix_to_string(int matrix[N][M]) {
 	{
 		for (int j = 0; j < M; j++)
 		{
-			msg += to_string(matrix[i][j]) + " ";
+			msg += to_string(matrix[i][j]) + "\t";
 		}
 		msg += "\n";
 	}
@@ -36,9 +36,30 @@ string convert_matrix_to_string(int matrix[N][M]) {
 
 bool upperTriangularMatrix(int matrix[N][M]) {
 
-	bool isMatrixUpper = true;
+	for (int i = 1; i < N; i++)
+	{
+		for (int j = 0; j < i; j++)
+		{
+			if (matrix[i][j] != 0) {
+				return false;
+			}
+		}
+	}
 
+	return true;
+}
 
+bool lowerTriangularMatrix(int matrix[N][M]) {
 
-	return isMatrixUpper;
+	for (int i = 0; i < N - 1; i++)
+	{
+		for (int j = 0; j > i; j++)
+		{
+			if (matrix[i][j] != 0) {
+				return false;
+			}
+		}
+	}
+
+	return true;
 }
