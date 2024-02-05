@@ -18,7 +18,11 @@ int main() {
 	user_init(matrix);
 	cout << convert_matrix_to_string(matrix);
 
+	string msgUpper = upperTriangularMatrix(matrix) ? "" : "n't";
+	string msgLower = lowerTriangularMatrix(matrix) ? "" : "n't";
 
+	cout << "\nYour triangular matrix is" << msgUpper << " upper";
+	cout << "\nYour triangular matrix is" << msgLower << " lower";
 
 	return 0;
 }

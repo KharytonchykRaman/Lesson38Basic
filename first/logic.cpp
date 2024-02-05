@@ -53,9 +53,9 @@ bool lowerTriangularMatrix(int matrix[N][M]) {
 
 	for (int i = 0; i < N - 1; i++)
 	{
-		for (int j = 0; j > i; j++)
+		for (int j = 1; j < M; j++)
 		{
-			if (matrix[i][j] != 0) {
+			if (matrix[i][j] != 0 && j > i) {
 				return false;
 			}
 		}
